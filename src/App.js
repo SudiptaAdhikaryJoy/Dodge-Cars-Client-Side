@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -8,38 +7,21 @@ import {
 } from "react-router-dom";
 import Home from './Pages/Home/Home/Home';
 import About from './Pages/About/About';
+import Navigation from './Pages/Shared/Navigation/Navigation';
 
 function App() {
   return (
     <div className="App">
       <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/users">Users</Link>
-            </li>
-          </ul>
-        </nav>
-
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
+        <Navigation></Navigation>
         <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          
           <Route path="/">
             <Home />
           </Route>
+          <Route path="/about">
+            <About />
+          </Route>    
         </Switch>
-      </div>
     </Router>
     </div>
   );
