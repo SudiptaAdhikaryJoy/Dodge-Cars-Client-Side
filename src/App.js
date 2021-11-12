@@ -7,7 +7,7 @@ import {
   Link
 } from "react-router-dom";
 import Home from './Pages/Home/Home/Home';
-import About from './Pages/About';
+import About from './Pages/About/About';
 
 function App() {
   return (
