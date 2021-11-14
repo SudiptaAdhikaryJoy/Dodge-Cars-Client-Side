@@ -35,7 +35,7 @@ function App() {
           <Route path="/dashboard">
             <Dashboard></Dashboard>
           </Route>
-          <PrivateRoute path="/items">
+          <PrivateRoute path="/items/:id">
             <Items></Items>
           </PrivateRoute>
           <Route path="/">
