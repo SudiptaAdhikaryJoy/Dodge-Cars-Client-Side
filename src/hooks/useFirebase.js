@@ -4,6 +4,7 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, si
 
 // initializeFirebase App
 initializeFirebase();
+
 const useFirebase = () => {
         const [user, setUser] = useState({});
         const [isLoading, setIsLoading] = useState(true);
@@ -17,7 +18,6 @@ const useFirebase = () => {
            createUserWithEmailAndPassword(auth, email, password)
            .then((userCredential) => {
                 // Signed in 
-                setError('');
                 const newUser = {email, displayName: name};
                 setUser(newUser);
                 updateProfile(auth.currentUser, {
@@ -25,7 +25,8 @@ const useFirebase = () => {
                     }).then(() => {
                     }).catch((error) => {
                     });
-                history.replace('/');
+                    history.replace('/');
+                    setError('');
             })
             .catch((error) => {
                 setError(error.message);
@@ -52,8 +53,9 @@ const useFirebase = () => {
             setIsLoading(true);
             signInWithPopup(auth, googleProvider)
                 .then((result) => {
-                    
                     const user = result.user;
+                    const destination = location?.state?.from || '/';
+                    history.replace(destination);
                     setError('');
                 }).catch((error) => {
                     setError(error.message);
@@ -88,8 +90,8 @@ const useFirebase = () => {
             user,
             isLoading,
             error,
-            registerUser,
             loginUser,
+            registerUser,
             signInWithGoogle,
             logOut
         }

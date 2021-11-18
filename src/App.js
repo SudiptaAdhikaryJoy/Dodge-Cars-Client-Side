@@ -17,6 +17,7 @@ import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import NotFound from './Pages/NotFound/NotFound';
 import Footer from './Pages/Shared/Footer/Footer';
+import Cars from './Pages/Cars/Cars';
 
 function App() {
   return (
@@ -25,6 +26,12 @@ function App() {
         <Router>
         <Navigation></Navigation>
         <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/home">
+            <Home />
+          </Route>
           
           <Route path="/login">
             <Login></Login>
@@ -32,15 +39,16 @@ function App() {
           <Route path="/register">
             <Register></Register>
           </Route>
-          <Route path="/dashboard">
+          <PrivateRoute path="/dashboard">
             <Dashboard></Dashboard>
+          </PrivateRoute>
+          <Route path="/cars">
+            <Cars></Cars>
           </Route>
           <PrivateRoute path="/items/:id">
             <Items></Items>
           </PrivateRoute>
-          <Route path="/">
-            <Home />
-          </Route>
+          
           <Route path="/about">
             <About />
           </Route>  
@@ -48,7 +56,7 @@ function App() {
             <NotFound></NotFound>
             </Route>  
         </Switch>
-        <Footer></Footer>
+        
     </Router>
       </AuthProvider>
     </div>

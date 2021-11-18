@@ -36,7 +36,7 @@ const Register = () => {
                             id="standard-basic"
                             label="your name"
                             name="email"
-                            onChange={handleOnChange}
+                            onBlur={handleOnChange}
                             variant="standard"
                          />
                         <TextField
@@ -45,7 +45,7 @@ const Register = () => {
                             label="your email"
                             name="email"
                             type="email"
-                            onChange={handleOnChange}
+                            onBlur={handleOnChange}
                             variant="standard"
                          />
                         <TextField
@@ -54,7 +54,7 @@ const Register = () => {
                             label="your password"
                             type="password"
                             name="password"
-                            onChange={handleOnChange}
+                            onBlur={handleOnChange}
                             variant="standard"
                          />
                         <TextField
@@ -63,7 +63,7 @@ const Register = () => {
                             label="Confirm your password"
                             type="password"
                             name="password2"
-                            onChange={handleOnChange}
+                            onBlur={handleOnChange}
                             variant="standard"
                          />
 
