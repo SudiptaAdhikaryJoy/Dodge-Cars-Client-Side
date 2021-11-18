@@ -10,8 +10,8 @@ const Items = () => {
         .then(data => setItems(data.slice(0,6)));
     },[])
     return (
-        <div className={{mt:3}}>
-            <h2 style={{fontWeight:'800', color:'black'}}>Our cars</h2>
+        <div className={{mt:5}}>
+            <h2 className={{mt: 4}} style={{fontWeight:'800', color:'black'}}>Our cars</h2>
             <div className="row">
                 {
                     items.map((item) => <Item

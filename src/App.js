@@ -18,6 +18,7 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import NotFound from './Pages/NotFound/NotFound';
 import Footer from './Pages/Shared/Footer/Footer';
 import Cars from './Pages/Cars/Cars';
+import Details from './Pages/Details/Details';
 
 function App() {
   return (
@@ -48,7 +49,9 @@ function App() {
           <PrivateRoute path="/items/:id">
             <Items></Items>
           </PrivateRoute>
-          
+          <Route path="/details">
+            <Details></Details>
+          </Route>
           <Route path="/about">
             <About />
           </Route>  

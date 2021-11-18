@@ -1,6 +1,7 @@
 import { Container, Grid, Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import carExpo from '../../images/car-3.jpeg';
 import MuiButton from '../../StyledComponent/Button';
 
@@ -31,7 +32,7 @@ const Products = () => {
                         <Typography variant="body1" sx={{my: 3, color: '#fff'}}>
                             Domestic. Not Domesticated. Dodge vehicles are bred for performance. Explore the full Dodge lineup, inventory, incentives, dealership information & more.
                         </Typography>
-                        <MuiButton>Explore Dodge</MuiButton>
+                        <NavLink to='/cars'><MuiButton>Explore Dodge</MuiButton></NavLink>
                     </Grid>
                 </Grid>
                 
